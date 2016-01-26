@@ -55,7 +55,7 @@ double StopLossLevel, TakeProfitLevel, StopLevel;
 double YenPairAdjustFactor = 1;
 
 int current_direction, last_direction;
-bool first_time;
+bool first_time = True;
 
 
 
@@ -294,7 +294,7 @@ Function Notes:
 Declare these before the init() of the EA 
 
 int current_direction, last_direction;
-bool first_time;
+bool first_time = True;
 
 ----  
 
