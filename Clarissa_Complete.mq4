@@ -84,6 +84,7 @@ double YenPairAdjustFactor = 1;
 int current_direction, last_direction;
 bool first_time = True;
 double StopLossFinal, TakeProfitFinal, LotsFinal, ATR;
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
@@ -128,7 +129,7 @@ int start() {
    TakeProfitFinal = volBasedTakeProfit(isVolatilityTakeProfitOn, TakeProfit, ATR, VolBasedTPMultipler, P);
    // volBasedTakeProfit(bool isVolatilitySwitchOn, double fixedTP, double volATR, double volMultiplier, int K)
    
-   StopLevel = MarketInfo(Symbol(), MODE_STOPLEVEL) + MarketInfo(Symbol(), MODE_SPREAD); // Defining minimum StopLevel
+   StopLevel = (MarketInfo(Symbol(), MODE_STOPLEVEL) + MarketInfo(Symbol(), MODE_SPREAD)) / P; // Defining minimum StopLevel
 
    if (StopLossFinal < StopLevel) StopLossFinal = StopLevel;
    if (TakeProfitFinal < StopLevel) TakeProfitFinal = StopLevel;
