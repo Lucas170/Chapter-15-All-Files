@@ -42,7 +42,7 @@ void OnStart()
 
 
 
-   // TDL 3: No trade on First Week of the Month (Only trade from the first Monday onwards)
+   // TDL 3: No trade on First Week of the Month (Only trade from the first Monday onwards, unless the month starts on Sunday or Monday, then skip the first week)
    // Difficulty: Intermediate to Advanced
    
  
